@@ -1,8 +1,6 @@
-import PropTypes from 'prop-types';
-import createClass from "create-react-class";
 import Star from './star.js';
 
-const StarRatingC = ({totalStars=5, starsSelected=0,onRate=f=>f}) =>
+const StarRating = ({totalStars=5, starsSelected=0,onRate=f=>f}) =>
 <div className="star-rating">
   {[...Array(totalStars)].map((e,i) => <Star key={i}
     selected={i<starsSelected}
@@ -10,8 +8,8 @@ const StarRatingC = ({totalStars=5, starsSelected=0,onRate=f=>f}) =>
     )
   }
   <br/>
-  <p>{starsSelected} звёзд из {totalStars}</p>
+  <p>{starsSelected} из {totalStars} звёзд</p>
 </div>
 
 
-export default StarRatingC;
+export default StarRating;
