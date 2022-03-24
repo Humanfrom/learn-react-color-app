@@ -6,12 +6,15 @@ import AddColorForm from './components/addColorForm.js';
 import ColorList from './components/colorList.js';
 import data from './data/data.js';
 import {v4} from 'uuid'
+import C from './constants';
 
 class App extends Component {
 
   constructor(props){
     super(props);
-    this.state = {colors:[]};
+    this.state = {
+      colors: data.colors
+    };
     this.addColor = this.addColor.bind(this);
     this.rateColor = this.rateColor.bind(this);
     this.removeColor = this.removeColor.bind(this);
@@ -32,10 +35,11 @@ class App extends Component {
 
   rateColor(id,rating){
     const colors = this.state.colors.map(
-      (color,i) => (color.id == id) ? {...color,rating} : color
+      (color,i) => (color.id === id) ? {...color,rating} : color
     );
     this.setState({colors});
   }
+
 
   removeColor(id){
     const colors = this.state.colors.filter(
@@ -50,7 +54,11 @@ class App extends Component {
     return (
       <div className='app'>
         <AddColorForm onNewColor={addColor}/>
-        <ColorList colors={colors} onRate={rateColor} onRemove={removeColor}/>
+        <ColorList
+          colors={colors}
+          onRate={rateColor}
+          onRemove={removeColor}
+        />
       </div>
     );
   }
