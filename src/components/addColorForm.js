@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
-const logColor = (title,color) => console.log(`New Color: ${title} ${color}`)
-
-const AddColorForm = ({onNewColor=f=>f}) => {
+const AddColorForm = ({onNewColor}) => {
   let _title, _color;
   const submit = e => {
     e.preventDefault();
-    onNewColor(_title.value,_color.value);
+    onNewColor(_color.value,_title.value);
     _title.value = '';
     _color.value = '#000000'
     _title.focus();
@@ -18,6 +17,10 @@ const AddColorForm = ({onNewColor=f=>f}) => {
     <button>ADD</button>
     </form>
   )
+}
+
+AddColorForm.contextTypes = {
+  store: PropTypes.object
 }
 
 export default AddColorForm;

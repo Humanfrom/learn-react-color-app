@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: Gotham Pro;
 }
 
 .color-list {
@@ -14,14 +15,23 @@ section {
   margin: 20px;
   width: 200px;
   height: 200px;
+  padding: 10px;
 }
 
 h1 {
   text-align: center;
-  margin: 10px;
+  margin: 15px;
+  font-family: Gotham Pro;
+  font-size: 20px;
 }
 
+p, a {
+  font-family: Gotham Pro;
+}
+
+
 div.color {
+  border-radius: 3px;
   height:60px
 }
 
@@ -34,6 +44,23 @@ div.color {
     position: absolute;
    background-color: white;
    border: 0;
+   font-weight: 700;
+   border-bottom-right-radius: 3px;
+}
+
+a {
+  color: black;
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  text-decoration:none;
+  background-color: #FFF;
+}
+
+.selected {
+  color: #fff;
+  background-color: #000;
 }
 
 form {
@@ -45,6 +72,11 @@ form {
 form>input{
   margin:10px;
 }
+
+.menu {
+  margin: 20px;
+}
+
 input[type=text]{
 
     flex: 5;
@@ -107,4 +139,29 @@ form>button{
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.star {
+cursor: pointer;
+height: 25px;
+width: 25px;
+margin: 2px;
+float: left;
+background-color: grey;
+clip-path: polygon(
+50% 0%,
+63% 38%,
+100% 38%,
+69% 59%,
+82% 100%,
+50% 75%,
+18% 100%,
+31% 59%,
+0% 38%,
+37% 38%
+);
+}
+.star.selected {
+background-color: red;
 }
