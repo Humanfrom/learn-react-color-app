@@ -1,6 +1,6 @@
 # Learn project on React + Redux (based on create-react-app)
 
-You can use standart command for this popular package.
+You can use standard commands for this popular package.
 
 ### `npm start`
 
